@@ -1,8 +1,6 @@
 # Ember Faker
 
-This is an Ember addon for [Faker.js](https://github.com/marak/Faker.js/) that includes
-some useful helpers for prototyping.
-
+This is an Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
 ## Installation
 
 ```javascript
@@ -12,7 +10,7 @@ ember g ember-faker
 
 ## Usage
 
-#### Import the faker module
+Import the faker module
 
 ```javascript
 import faker from 'faker';
@@ -20,14 +18,6 @@ import faker from 'faker';
 // ...
 
 user.set('name', faker.name.firstName());
-```
-#### Use the helpers
-
-```hbs
-{{fake-first-name}}
-{{fake-list-name}}
-{{fake-email}}
-{{fake-address}}
 ```
 
 ## Development
