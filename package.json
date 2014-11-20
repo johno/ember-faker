@@ -1,7 +1,7 @@
 {
   "name": "ember-faker",
   "description": "Include fake data in your app for testing or prototyping.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "directories": {
     "doc": "doc",
     "test": "tests"
