@@ -1,7 +1,7 @@
 /* globals Faker */
 
 define('faker', [], function() {
-  "use strict";
+  'use strict';
 
   return {
     'default': faker

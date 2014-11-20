@@ -17,7 +17,7 @@ import faker from 'faker';
 
 // ...
 
-user.set('name', faker.name.firstName());
+user.set('email', faker.directive('email')());
 ```
 
 ## Development
