@@ -1,7 +1,7 @@
 # Ember Faker
 
-This is an Ember addon for [Faker.js](https://github.com/marak/Faker.js/)
-that includes some useful helpers for prototyping.
+This is an Ember addon for [Faker.js](https://github.com/marak/Faker.js/) that includes
+some useful helpers for prototyping.
 
 ## Installation
 
