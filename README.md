@@ -18,6 +18,8 @@ import faker from 'faker';
 // ...
 
 user.set('email', faker.directive('email')());
+user.set('firstName', faker.directive('firstName')());
+user.set('lastName', faker.directive('lastName')());
 ```
 
 ## Development
