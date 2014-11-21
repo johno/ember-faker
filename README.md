@@ -1,6 +1,7 @@
 # Ember Faker
 
 This is an Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
+
 ## Installation
 
 ```javascript
@@ -17,9 +18,8 @@ import faker from 'faker';
 
 // ...
 
-user.set('email', faker.directive('email')());
-user.set('firstName', faker.directive('firstName')());
-user.set('lastName', faker.directive('lastName')());
+user.set('firstName', faker.name.firstName());
+user.set('lastName', faker.name.lastName());
 ```
 
 ## Development
@@ -60,6 +60,7 @@ MIT
 
 ## Thanks to the following:
 
-* [Faker.js](https://github.com/marak/Faker.js/).
+* [Faker.js](https://github.com/marak/Faker.js/)
+* [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
 
 Crafted with <3 by [John Otander](http://johnotander.com) ([@4lpine](https://twitter.com/4lpine)).
