@@ -6,6 +6,6 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('faker');
+    return this.addBowerPackageToProject('Faker');
   }
 };
