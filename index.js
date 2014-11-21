@@ -9,6 +9,10 @@ module.exports = {
 
     if (app.env !== 'production') {
       app.import(app.bowerDirectory + '/Faker/build/build/faker.js');
+      app.import('vendor/ember-faker/shim.js', {
+        type: 'vendor',
+        exports: { 'faker': ['default'] }
+      });
     }
   },
 
