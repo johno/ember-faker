@@ -60,7 +60,7 @@ MIT
 
 ## Thanks to the following:
 
-* [Faker.js](https://github.com/marak/Faker.js/)
-* [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender)
+* [Faker.js](https://github.com/marak/Faker.js/) for the fake data.
+* [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender) for the shim example.
 
 Crafted with <3 by [John Otander](http://johnotander.com) ([@4lpine](https://twitter.com/4lpine)).
