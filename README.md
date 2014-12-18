@@ -1,5 +1,7 @@
 # Ember Faker
 
+[![Build Status](https://travis-ci.org/johnotander/ember-faker.svg?branch=master)](https://travis-ci.org/johnotander/ember-faker)
+
 This is an Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
 
 ## Installation
