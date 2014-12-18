@@ -60,7 +60,7 @@ MIT
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## Thanks to the following:
+## Thanks to the following
 
 * [Faker.js](https://github.com/marak/Faker.js/) for the fake data.
 * [ember-cli-pretender](https://github.com/rwjblue/ember-cli-pretender) for the shim example.

@@ -1,4 +1,4 @@
-/* globals Faker */
+/* globals faker */
 
 define('faker', [], function() {
   'use strict';
