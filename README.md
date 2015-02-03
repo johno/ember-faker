@@ -2,18 +2,32 @@
 
 [![Build Status](https://travis-ci.org/johnotander/ember-faker.svg?branch=master)](https://travis-ci.org/johnotander/ember-faker)
 
-This is an Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
+Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
 
 ## Installation
 
 ```javascript
-npm install --save-dev ember-faker
-ember g ember-faker
+ember install:addon ember-faker
 ```
 
 ## Usage
 
-Import the faker module
+Import the faker module with `import faker from 'faker'`. Then you can use it as a default
+value for dummy data:
+
+```javascript
+import faker from 'faker';
+
+export default DS.Model.extend({
+  firstName: DS.attr('string', {
+    defaultValue: function() {
+      return faker.name.firstName();
+    }
+  })
+});
+```
+
+Or manually set attributes for tests or prototypes:
 
 ```javascript
 import faker from 'faker';
