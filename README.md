@@ -1,6 +1,4 @@
-# Ember Faker
-
-[![Build Status](https://travis-ci.org/johnotander/ember-faker.svg?branch=master)](https://travis-ci.org/johnotander/ember-faker)
+# ember-faker [![Build Status](https://travis-ci.org/johnotander/ember-faker.svg?branch=master)](https://travis-ci.org/johnotander/ember-faker)  
 
 Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
 
@@ -36,6 +34,46 @@ import faker from 'faker';
 
 user.set('firstName', faker.name.firstName());
 user.set('lastName', faker.name.lastName());
+```
+
+### Helpers
+
+Faker now provides a collection of helpers for you to use when prototyping templates and such.
+
+##### Names
+
+```hbs
+{{f-first-name}}
+{{f-last-name}}
+{{f-full-name}}
+```
+
+##### Dates
+
+```hbs
+{{f-past-date}}
+{{f-future-date}}
+```
+
+##### Internet
+
+```hbs
+{{f-avatar}}
+{{f-email}}
+{{f-username}}
+{{f-ip}}
+{{f-password}}
+```
+
+##### Addresses
+
+```hbs
+{{f-zip-code}}
+{{f-street-address}}
+{{f-country}}
+{{f-state}}
+{{f-latitude}}
+{{f-longitude}}
 ```
 
 ## Development
