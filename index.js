@@ -6,8 +6,9 @@ module.exports = {
 
   included: function included(app) {
     this.app = app;
+    var addonConfig = this.app.project.config(app.env)['ember-faker'];
 
-    if (app.env !== 'production') {
+    if (app.env !== 'production' || addonConfig.enabled) {
       app.import(app.bowerDirectory + '/Faker/build/build/faker.js');
       app.import('vendor/ember-faker/shim.js', {
         type: 'vendor',
