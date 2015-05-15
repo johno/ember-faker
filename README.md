@@ -38,6 +38,21 @@ user.set('firstName', faker.name.firstName());
 user.set('lastName', faker.name.lastName());
 ```
 
+## Environment options
+
+By default faker is included into your build for non-production
+environments. To include it in production, add this
+to your config:
+
+```js
+// config/environment.js
+if (environment === 'production') {
+  ENV['ember-faker'] = {
+    enabled: true
+  };
+}
+```
+
 ## Development
 
 ### Installation
