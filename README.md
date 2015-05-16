@@ -4,9 +4,15 @@
 
 Ember addon wrapper for [Faker.js](https://github.com/marak/Faker.js/).
 
-## Installation
+## Installation for ember-cli >= 0.2.3
 
-```javascript
+```bash
+ember install ember-faker
+```
+
+#### ember-cli 0.1.5 - 0.2.2
+
+```bash
 ember install:addon ember-faker
 ```
 
