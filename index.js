@@ -1,14 +1,14 @@
 'use strict';
-let path = require('path');
+var path = require('path');
 
 module.exports = {
   name: 'ember-faker',
 
-  included(app) {
-    this._super(...arguments);
+  included: function(app) {
+    this._super.included.apply(this, arguments);
 
     this.app = app;
-    let addonConfig = this.app.project.config(app.env)['ember-faker'];
+    var addonConfig = this.app.project.config(app.env)['ember-faker'];
 
     if (app.env !== 'production' || addonConfig.enabled) {
       app.import(app.bowerDirectory + '/Faker/build/build/faker.js');
@@ -19,7 +19,7 @@ module.exports = {
     }
   },
 
-  blueprintsPath() {
+  blueprintsPath: function() {
     return path.join(__dirname, 'blueprints');
   }
 };
