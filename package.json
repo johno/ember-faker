@@ -41,5 +41,7 @@
     "configPath": "tests/dummy/config",
     "defaultBlueprint": "ember-faker"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ember-cli-babel": "^6.4.1"
+  }
 }
