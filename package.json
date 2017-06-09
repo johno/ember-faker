@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/johnotander/ember-faker",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.0.0"
   },
   "author": "John Otander",
   "license": "MIT",
