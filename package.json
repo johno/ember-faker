@@ -9,11 +9,11 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember try:each"
+    "test": "ember test"
   },
   "repository": "https://github.com/johnotander/ember-faker",
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 6.0.0"
   },
   "author": "John Otander",
   "license": "MIT",
