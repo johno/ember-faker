@@ -5,11 +5,11 @@ module.exports = function(defaults) {
     sourcemaps: {
       enabled: false
     },
-    // nodeAssets: {
-    //   faker: {
-    //     import: ['build/build/faker.js']
-    //   }
-    // }
+    nodeAssets: {
+      faker: {
+        import: ['build/build/faker.js']
+      }
+    }
     // Add options here
   });
 

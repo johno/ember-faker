@@ -1,7 +1,5 @@
 'use strict';
 
-// var path = require('path');
-
 module.exports = {
   name: 'ember-faker',
 
@@ -18,11 +16,6 @@ module.exports = {
 
   included(app) {
     this._super.included.apply(this, arguments);
-
-    this.app = app;
-    var addonConfig = this.app.project.config(app.env)['ember-faker'];
-
-    console.log("HERE");
 
     if (this._shouldIncludeFiles()) {
       app.import('vendor/ember-faker/shim.js', {
