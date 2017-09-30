@@ -10,7 +10,7 @@
     "start": "ember server",
     "build": "ember build",
     "test": "ember try:each",
-    "test:node": "mocha node-tests/**/*-test.js"
+    "node-test": "mocha node-tests/**/*-test.js"
   },
   "repository": "https://github.com/johnotander/ember-faker",
   "engines": {
