@@ -22,6 +22,7 @@
     "ember-cli": "2.13.2",
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-node-assets": "^0.2.2",
     "ember-cli-qunit": "4.0.0",
     "ember-cli-shims": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -43,6 +44,7 @@
     "defaultBlueprint": "ember-faker"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.4.1"
+    "ember-cli-babel": "^6.4.1",
+    "faker": "^4.1.0"
   }
 }
