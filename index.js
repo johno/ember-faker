@@ -7,7 +7,7 @@ module.exports = {
     nodeAssets: {
       faker() {
         return {
-          enabled: this._shouldIncludeFiles(),
+          enabled: this._shouldInclude(),
           import: ['build/build/faker.js']
         }
       }
@@ -17,7 +17,7 @@ module.exports = {
   included(app) {
     this._super.included.apply(this, arguments);
 
-    if (this._shouldIncludeFiles()) {
+    if (this._shouldInclude()) {
       app.import('vendor/ember-faker/shim.js', {
         type: 'vendor',
         exports: {
@@ -27,7 +27,7 @@ module.exports = {
     }
   },
 
-  _shouldIncludeFiles() {
+  _shouldInclude() {
     const app = this.app;
     const addonConfig = app.project.config(app.env)['ember-faker'];
 
