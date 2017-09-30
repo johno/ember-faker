@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-describe('import files', function() {
+describe('import', function() {
   this.timeout(15000);
 
   afterEach(function() {
@@ -32,7 +32,9 @@ describe('import files', function() {
 
   it('includes faker in production when enabled is set to true', function() {
     process.env.EMBER_ENV = 'production';
-    const addon = new EmberAddon({ configPath: 'tests/fixtures/config/environment-production-enabled' });
+    const addon = new EmberAddon({
+      configPath: 'tests/fixtures/config/environment-enabled'
+    });
 
     expect(addon._scriptOutputFiles['/assets/vendor.js']).to.include(
       'vendor/ember-faker/shim.js'
