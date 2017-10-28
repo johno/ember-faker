@@ -1,25 +1,36 @@
 'use strict';
-var path = require('path');
 
 module.exports = {
   name: 'ember-faker',
 
-  included: function(app) {
+  options: {
+    nodeAssets: {
+      faker() {
+        return {
+          enabled: this._shouldInclude(),
+          import: ['build/build/faker.js']
+        }
+      }
+    }
+  },
+
+  included(app) {
     this._super.included.apply(this, arguments);
 
-    this.app = app;
-    var addonConfig = this.app.project.config(app.env)['ember-faker'];
-
-    if (app.env !== 'production' || addonConfig.enabled) {
-      app.import(app.bowerDirectory + '/Faker/build/build/faker.js');
+    if (this._shouldInclude()) {
       app.import('vendor/ember-faker/shim.js', {
         type: 'vendor',
-        exports: { 'faker': ['default'] }
+        exports: {
+          faker: ['default']
+        }
       });
     }
   },
 
-  blueprintsPath: function() {
-    return path.join(__dirname, 'blueprints');
+  _shouldInclude() {
+    const app = this.app;
+    const addonConfig = app.project.config(app.env)['ember-faker'];
+
+    return app.env !== 'production' || addonConfig.enabled;
   }
 };
