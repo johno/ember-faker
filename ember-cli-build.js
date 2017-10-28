@@ -4,6 +4,11 @@ module.exports = function(defaults) {
   var app = new EmberAddon(defaults, {
     sourcemaps: {
       enabled: false
+    },
+    nodeAssets: {
+      faker: {
+        import: ['build/build/faker.js']
+      }
     }
     // Add options here
   });

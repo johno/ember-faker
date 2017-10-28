@@ -9,7 +9,8 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember try:each"
+    "test": "ember try:each",
+    "node-test": "mocha node-tests/**/*-test.js"
   },
   "repository": "https://github.com/johnotander/ember-faker",
   "engines": {
@@ -19,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "2.5.0",
+    "chai": "^4.1.2",
     "ember-cli": "2.13.2",
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-inject-live-reload": "^1.4.1",
@@ -30,7 +32,8 @@
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.1.0",
     "ember-source": "^2.13.3",
-    "loader.js": "^4.4.1"
+    "loader.js": "^4.4.1",
+    "mocha": "^3.5.3"
   },
   "keywords": [
     "ember-addon",
@@ -43,6 +46,8 @@
     "defaultBlueprint": "ember-faker"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.4.1"
+    "ember-cli-babel": "^6.4.1",
+    "ember-cli-node-assets": "^0.2.2",
+    "faker": "^3.0.0"
   }
 }

@@ -4,6 +4,6 @@ define('faker', [], function() {
   'use strict';
 
   return {
-    'default': faker
+    default: faker
   };
 });
