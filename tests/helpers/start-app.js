@@ -1,25 +1,16 @@
-import Ember from 'ember';
 import Application from '../../app';
-import Router from '../../router';
 import config from '../../config/environment';
+import { merge } from '@ember/polyfills';
+import { run } from '@ember/runloop';
 
 export default function startApp(attrs) {
-  var App;
+  let attributes = merge({}, config.APP);
+  attributes = merge(attributes, attrs); // use defaults, but you can override;
 
-  var attributes = Ember.merge({}, config.APP);
-  attributes = Ember.merge(attributes, attrs); // use defaults, but you can override;
-
-  Router.reopen({
-    location: 'none'
+  return run(() => {
+    let application = Application.create(attributes);
+    application.setupForTesting();
+    application.injectTestHelpers();
+    return application;
   });
-
-  Ember.run(function() {
-    App = Application.create(attributes);
-    App.setupForTesting();
-    App.injectTestHelpers();
-  });
-
-  App.reset(); // this shouldn't be needed, i want to be able to "start an app at a specific URL"
-
-  return App;
 }
