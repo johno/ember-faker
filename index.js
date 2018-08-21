@@ -28,7 +28,7 @@ module.exports = {
   },
 
   _shouldInclude() {
-    const app = this.app;
+    const app = this._findHost ? this._findHost() : this.app;
     const addonConfig = app.project.config(app.env)['ember-faker'];
 
     return app.env !== 'production' || addonConfig.enabled;
