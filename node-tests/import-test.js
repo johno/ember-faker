@@ -2,6 +2,9 @@
 
 const expect = require('chai').expect;
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const describe = require('mocha').describe;
+const afterEach = require('mocha').afterEach;
+const it = require('mocha').it;
 
 describe('import', function() {
   this.timeout(15000);
