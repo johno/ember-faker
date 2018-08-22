@@ -2,38 +2,40 @@
   "name": "ember-faker",
   "description": "Include fake data in your app for testing or prototyping.",
   "version": "1.2.1",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
   "scripts": {
-    "start": "ember server",
+    "lint:js": "eslint .",
+    "start": "ember serve",
+    "test": "ember test",
     "build": "ember build",
-    "test": "ember try:each",
+    "test:all": "ember try:each",
     "node-test": "mocha node-tests/**/*-test.js"
   },
-  "repository": "https://github.com/johnotander/ember-faker",
   "engines": {
-    "node": ">= 4.0.0"
+    "node": "6.* || 8.* || >= 10.*"
   },
-  "author": "John Otander",
-  "license": "MIT",
   "devDependencies": {
-    "broccoli-asset-rev": "^2.6.0",
+    "broccoli-asset-rev": "^2.7.0",
     "chai": "^4.1.2",
-    "ember-cli": "^2.16.2",
+    "ember-cli": "~3.3.0",
+    "ember-cli-eslint": "^4.2.3",
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-qunit": "^4.0.1",
-    "ember-cli-shims": "^1.1.0",
+    "ember-cli-qunit": "^4.3.2",
+    "ember-cli-shims": "^1.2.0",
     "ember-cli-uglify": "^2.0.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
-    "ember-load-initializers": "^1.0.0",
+    "ember-load-initializers": "^1.1.0",
+    "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.1.0",
-    "ember-source": "^2.16.0",
+    "ember-source": "~3.3.0",
+    "ember-source-channel-url": "^1.0.1",
+    "ember-try": "^0.2.23",
+    "eslint-plugin-ember": "^5.2.0",
+    "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.4.1",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "qunit-dom": "^0.6.2"
   },
   "keywords": [
     "ember-addon",
@@ -41,6 +43,13 @@
     "fake",
     "data"
   ],
+  "repository": "https://github.com/johnotander/ember-faker",
+  "license": "MIT",
+  "author": "John Otander",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "defaultBlueprint": "ember-faker"

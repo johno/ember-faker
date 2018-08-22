@@ -1,8 +1,7 @@
-export function initialize(/* container, application */) {
-  // application.inject('route', 'foo', 'service:foo');
-};
+export function initialize() {
+}
 
 export default {
   name: 'ember-faker',
-  initialize: initialize
+  initialize
 };

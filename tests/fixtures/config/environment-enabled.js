@@ -1,4 +1,6 @@
-module.exports = function(environment) {
+/* eslint-env node */
+
+module.exports = function() {
   return {
     'ember-faker': {
       enabled: true
