@@ -44,4 +44,14 @@ describe('import', function() {
     );
   });
 
+  it('excludes faker in development when enabled is set to false', function() {
+    const addon = new EmberAddon({
+      configPath: 'tests/fixtures/config/environment-disabled'
+    });
+
+    expect(addon._scriptOutputFiles['/assets/vendor.js']).to.not.include(
+      'vendor/ember-faker/shim.js'
+    );
+  });
+
 });
