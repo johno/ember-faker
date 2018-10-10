@@ -27,10 +27,16 @@ module.exports = {
     }
   },
 
-  _shouldInclude() {
+  _getAddonConfig() {
     const app = this._findHost ? this._findHost() : this.app;
-    const addonConfig = app.project.config(app.env)['ember-faker'];
+    return Object.assign({
+      enabled: app.env !== 'production'
+    }, app.project.config(app.env)['ember-faker']);
+  },
 
-    return app.env !== 'production' || addonConfig.enabled;
+  _shouldInclude() {
+    let addonConfig = this._getAddonConfig();
+
+    return addonConfig.enabled;
   }
 };
