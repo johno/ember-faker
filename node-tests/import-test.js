@@ -33,25 +33,54 @@ describe('import', function() {
     });
   });
 
-  it('includes faker in production when enabled is set to true', function() {
-    process.env.EMBER_ENV = 'production';
-    const addon = new EmberAddon({
-      configPath: 'tests/fixtures/config/environment-enabled'
+  describe('config/environment', function() {
+    it('includes faker in production when enabled is set to true', function() {
+      process.env.EMBER_ENV = 'production';
+      const addon = new EmberAddon({
+        configPath: 'tests/fixtures/config/environment-enabled'
+      });
+
+      expect(addon._scriptOutputFiles['/assets/vendor.js']).to.include(
+        'vendor/ember-faker/shim.js'
+      );
     });
 
-    expect(addon._scriptOutputFiles['/assets/vendor.js']).to.include(
-      'vendor/ember-faker/shim.js'
-    );
+    it('excludes faker in development when enabled is set to false', function() {
+      const addon = new EmberAddon({
+        configPath: 'tests/fixtures/config/environment-disabled'
+      });
+
+      expect(addon._scriptOutputFiles['/assets/vendor.js']).to.not.include(
+        'vendor/ember-faker/shim.js'
+      );
+    });
   });
 
-  it('excludes faker in development when enabled is set to false', function() {
-    const addon = new EmberAddon({
-      configPath: 'tests/fixtures/config/environment-disabled'
+  describe('ember-cli-build', function() {
+    it('includes faker in production when enabled is set to true', function() {
+      process.env.EMBER_ENV = 'production';
+      const addon = new EmberAddon({
+        'ember-faker': {
+          enabled: true
+        }
+      });
+
+      expect(addon._scriptOutputFiles['/assets/vendor.js']).to.include(
+        'vendor/ember-faker/shim.js'
+      );
     });
 
-    expect(addon._scriptOutputFiles['/assets/vendor.js']).to.not.include(
-      'vendor/ember-faker/shim.js'
-    );
+    it('excludes faker in development when enabled is set to false', function() {
+      const addon = new EmberAddon({
+        'ember-faker': {
+          enabled: false
+        }
+      });
+
+      expect(addon._scriptOutputFiles['/assets/vendor.js']).to.not.include(
+        'vendor/ember-faker/shim.js'
+      );
+    });
   });
 
 });

@@ -51,12 +51,12 @@ environments. To include it in production, add this
 to your config:
 
 ```js
-// config/environment.js
-if (environment === 'production') {
-  ENV['ember-faker'] = {
-    enabled: true
-  };
-}
+// ember-cli-build.js
+let app = new EmberApp(defaults, {
+  'ember-faker': {
+    enabled: EmberApp.env === 'production'
+  }
+});
 ```
 
 ## Development

@@ -29,9 +29,15 @@ module.exports = {
 
   _getAddonConfig() {
     const app = this._findHost ? this._findHost() : this.app;
-    return Object.assign({
-      enabled: app.env !== 'production'
-    }, app.project.config(app.env)['ember-faker']);
+    return Object.assign(
+      {
+        enabled: app.env !== 'production'
+      },
+      // old way, to deprecate
+      app.project.config(app.env)['ember-faker'],
+      // new hotness
+      app.options['ember-faker']
+    );
   },
 
   _shouldInclude() {
