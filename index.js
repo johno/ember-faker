@@ -6,11 +6,27 @@ module.exports = {
   options: {
     nodeAssets: {
       faker() {
-        return {
+        let options = {
           enabled: this._shouldInclude(),
-          import: ['build/build/faker.js']
+        };
+
+        if (this._shouldUsePublic()) {
+          options.public = {
+            srcDir: 'build/build',
+            include: ['faker.js']
+          };
+        } else {
+          options.import = ['build/build/faker.js'];
         }
+
+        return options;
       }
+    }
+  },
+
+  contentFor(type, { rootURL }) {
+    if (type === 'body' && this._shouldUsePublic()) {
+      return `<script src="${rootURL}assets/faker.js"></script>`;
     }
   },
 
@@ -44,5 +60,11 @@ module.exports = {
     let addonConfig = this._getAddonConfig();
 
     return addonConfig.enabled;
+  },
+
+  _shouldUsePublic() {
+    let addonConfig = this._getAddonConfig();
+
+    return addonConfig.usePublic;
   }
 };
