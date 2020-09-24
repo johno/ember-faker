@@ -11,7 +11,7 @@
     "node-test": "mocha node-tests/**/*-test.js"
   },
   "engines": {
-    "node": "6.* || 8.* || >= 10.*"
+    "node": ">= 10.*"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",
@@ -55,7 +55,7 @@
     "defaultBlueprint": "ember-faker"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.4.1",
+    "ember-cli-babel": "^7.0.0",
     "ember-cli-node-assets": "^0.2.2",
     "faker": "^3.0.0"
   }
