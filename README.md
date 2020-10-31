@@ -46,15 +46,18 @@ user.set('lastName', faker.name.lastName());
 
 ## Environment options
 
-By default faker is included into your build for non-production
-environments. To include it in production, add this
-to your config:
-
 ```js
 // ember-cli-build.js
 let app = new EmberApp(defaults, {
   'ember-faker': {
-    enabled: EmberApp.env === 'production'
+    // By default faker is included into your build for non-production
+    // environments. To include it in production, add this
+    // to your config:
+    enabled: EmberApp.env === 'production',
+
+    // place in /assets/faker.js instead of /assets/vendor.js
+    // this can speed up your build because it avoids sourcemaps/concat
+    usePublic: true
   }
 });
 ```

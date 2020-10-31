@@ -83,4 +83,27 @@ describe('import', function() {
     });
   });
 
+  it('uses vendor tree by default', function() {
+    const addon = new EmberAddon({
+      'ember-faker': {
+        usePublic: false
+      }
+    });
+
+    expect(addon._scriptOutputFiles['/assets/vendor.js']).to.include(
+      'vendor/faker/build/build/faker.js'
+    );
+  });
+
+  it('can use public tree instead of vendor tree', function() {
+    const addon = new EmberAddon({
+      'ember-faker': {
+        usePublic: true
+      }
+    });
+
+    expect(addon._scriptOutputFiles['/assets/vendor.js']).to.not.include(
+      'vendor/faker/build/build/faker.js'
+    );
+  });
 });
