@@ -57,6 +57,6 @@
   "dependencies": {
     "ember-cli-babel": "^7.0.0",
     "ember-cli-node-assets": "^0.2.2",
-    "faker": "^3.0.0"
+    "faker": "^5.5.3"
   }
 }
