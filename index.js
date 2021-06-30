@@ -8,7 +8,7 @@ module.exports = {
       faker() {
         return {
           enabled: this._shouldInclude(),
-          import: ['build/build/faker.js']
+          import: ['dist/faker.js']
         }
       }
     }
