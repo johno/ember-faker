@@ -14,11 +14,11 @@ module.exports = {
     }
   },
 
-  included(app) {
+  included() {
     this._super.included.apply(this, arguments);
 
     if (this._shouldInclude()) {
-      app.import('vendor/ember-faker/shim.js', {
+      this.import('vendor/ember-faker/shim.js', {
         type: 'vendor',
         exports: {
           faker: ['default']
